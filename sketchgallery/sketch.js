@@ -25,7 +25,8 @@ let creatureSize = [];
 
 
 function setup() {
-  createCanvas(600, 600);
+  let canvas=createCanvas(600, 600);
+  canvas.parent("myContainer");
 
   for (creatureN = 0; creatureN < totalAmount; creatureN++) {
     creatureColor[creatureN] = color(
