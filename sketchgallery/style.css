@@ -64,7 +64,7 @@ text-align: center;
 position:fixed;
 width: 200px;
 height: 200px;
-right: 200px;
+right: 180px;
 border-radius: 200px;
 background-color: #AFBEA7;
 padding-top: 50px;
@@ -131,6 +131,7 @@ p{
 }
 
 #myContainer{
+  width: 600px;
   margin: 0 auto;
   /* position:absolute; */
   left: 200px;
