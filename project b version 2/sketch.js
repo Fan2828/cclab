@@ -20,7 +20,7 @@ function draw() {
   }
   }
   if (keyIsPressed){
-    let elems = document.querySelector('#map');
+    let elems = document.querySelectorAll('#map');
     elems[0].style.visibility = 'visible';
   }
 
