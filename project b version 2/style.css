@@ -1,0 +1,39 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+#stage{
+height: 550px;
+  width: 3000px;
+  position:relative;
+  top: 150px;
+}
+#container{
+  position:absolute;
+  bottom:150px;
+}
+
+#field{
+  position:absolute;
+  left: 700px;
+}
+
+.background{
+  position:absolute;
+  
+  /* margin-top: 100px; */
+}
+#map{
+  position:absolute;
+  top: 54px;
+  left:110px;
+}
+.connecter{
+  position:absolute;
+  left:400px;
+}

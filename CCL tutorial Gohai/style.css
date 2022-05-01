@@ -1,0 +1,31 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+#stage{
+position:relative;
+width:3000px;
+height: 600px;
+}
+
+#canvas-container{
+  position: fixed;
+
+
+}
+
+.obstacle{
+  position:absolute;
+  bottom:0px;
+  width: 200px;
+  height:200px;
+  background-color: aquamarine;
+}
+
+
+

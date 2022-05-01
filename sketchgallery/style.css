@@ -33,8 +33,6 @@ body{
 }
 .button:hover{
   position: fixed;
-  /* top:40%;
-  right:200px; */
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   background-color:white;
   border: none;
