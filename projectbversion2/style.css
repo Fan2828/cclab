@@ -15,7 +15,7 @@ height: 550px;
 }
 #container{
   position:absolute;
-  bottom:150px;
+  bottom:80px;
 }
 
 #field{
@@ -26,7 +26,11 @@ height: 550px;
 .backgrounds{
   position:absolute;
   
+  
   /* margin-top: 100px; */
+}
+#sunset{
+  left:50px;
 }
 
 .toppings{
@@ -50,4 +54,5 @@ height: 550px;
 .connecters{
   position:absolute;
   left:400px;
+  top:-4px;
 }
