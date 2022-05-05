@@ -20,13 +20,14 @@ function setup() {
   let canvas=createCanvas(3000, 200);
   canvas.parent('container');
 
-  // let elements=document.querySelectorAll('.toppings');
+  let elements=document.querySelectorAll('.toppings');
   for (let i=0;i<elements.length;i++){
     let topping=new Topping (elements[i].offsetLeft,elements[i].offsetWidth);
     toppings.push(topping);
     console.log('topping at', elements[i].offsetLeft, elements[i].offsetTop, 'dimensions', elements[i].offsetWidth, elements[i].offsetHeight);
     
   }
+
 
 
 }
@@ -41,13 +42,11 @@ function draw() {
   noStroke();
  let ground=quad(50,bikeY+70,windowWidth,bikeY+70,windowWidth-50,bikeY+bikeHeight+10,0,bikeY+bikeHeight+10);
 
- push();
-//  translate(bikeX+bikeWidth/2,bikeY+bikeHeight/2);
-//  scale(-1,1);
+
  image(bikes[curImage],bikeX,bikeY,bikeWidth,bikeHeight);
  
  
- pop();
+ 
  console.log(bikeX,mouseX);
  
 
@@ -60,28 +59,34 @@ function draw() {
 
 
   // circle(bikeX,bikeY,50);
-  // if(mouseX>bikeX+bikeWidth){
-  //   if(mouseIsPressed){
-  //     bikeX=bikeX+1;
-  // }
+  if(mouseX>bikeX+bikeWidth){
+    if(mouseIsPressed){
+      bikeX=bikeX+1;
+  }
 
-  // }
-  if(mouseIsPressed){
-    bikeX=bikeX+1;
-}
+  }
 
-  // else{
-  //   if(mouseIsPressed){
-  //     bikeX=bikeX-1;
 
-    
-  // }
-  // }
+  else{
+    if(mouseIsPressed){
+      push();
+      scale(-1,1);
+      bikeX=bikeX-1;
+      pop();
+  }
+  }
+// for(let i=0;i<toppings.length;i++){
+//   if(elements[i].offsetLeft<bikeX&&elements[i].offsetLeft+elements.offsetWidth>bikeX){
+//     elements[i].style.visibility = 'visible';
+//   }
+// }
+
 for(let i=0;i<toppings.length;i++){
   if(elements[i].offsetLeft<bikeX){
     elements[i].style.visibility = 'visible';
   }
 }
+console.log(elements[1].offsetLeft+elements.offsetWidth);
 
 }
 
@@ -90,13 +95,13 @@ class Topping{
     this.x=x;
     this.w=w;
   }
-   isNearby(checkX,checkY){
-     if (this.x<checkX&&checkX<this.x+this.w){
-       return true;
-     }else{
-       return false;
-     }
-   }
+  //  isNearby(checkX,checkY){
+  //    if (this.x<checkX&&checkX<this.x+this.w){
+  //      return true;
+  //    }else{
+  //      return false;
+  //    }
+  //  }
 }
 
 function windowResized(){
