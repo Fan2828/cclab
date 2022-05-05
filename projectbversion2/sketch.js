@@ -17,7 +17,7 @@ bikes.push(loadImage('asset/bike2.png'));
 
 function setup() {
   
-  let canvas=createCanvas(windowWidth, 200);
+  let canvas=createCanvas(3000, 200);
   canvas.parent('container');
 
   // let elements=document.querySelectorAll('.toppings');

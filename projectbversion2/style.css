@@ -9,9 +9,35 @@ canvas {
 
 #stage{
 height: 550px;
-  width: 3000px;
+  width: 1000px;
   position:relative;
   top: 150px;
+}
+
+#title{
+  padding: 0px;
+  margin:0px;
+  position:absolute;
+  left: 50px;
+  top:-150px;
+}
+
+#instruction{
+  padding:0px;
+  margin:0px;
+  left:50px;
+  top: -62px;
+  position:absolute;
+}
+
+h2{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+}
+
+h1{
+  font-size: 50px;
+  font-family: 'Koulen', cursive;
 }
 #container{
   position:absolute;
