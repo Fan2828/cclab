@@ -100,5 +100,5 @@ class Topping{
 }
 
 function windowResized(){
-  resizeCanvas(windowWidth,70);
+  resizeCanvas(windowWidth,200);
 }
