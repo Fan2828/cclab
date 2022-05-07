@@ -8,8 +8,11 @@ let bikeHeight=100;
 let bikeSpeed=0;
 let bikeMoved;
 let canvasWidth=3000;
-let scences;
-let last_saturation;
+
+let last_saturation=[];
+let saturation=[];
+let scenes;
+let scenesX=[];
 
 
 
@@ -27,19 +30,21 @@ function setup() {
   canvas.parent('container');
 
   let elements=document.querySelectorAll('.toppings');
+  console.log('left'+elements[0].offsetLeft);
   for (let i=0;i<elements.length;i++){
     let topping=new Topping (elements[i].offsetLeft,elements[i].offsetWidth);
     toppings.push(topping);
-    console.log('topping at', elements[i].offsetLeft, elements[i].offsetTop, 'dimensions', elements[i].offsetWidth, elements[i].offsetHeight);
+    // console.log('topping at', elements[i].offsetLeft, elements[i].offsetTop, 'dimensions', elements[i].offsetWidth, elements[i].offsetHeight);
     
   }
-  scences=document.querySelectorAll('#sunset');
-  // concole.log(scences);
-  sunsetX=scences[0].offsetLeft+scences[0].offsetWidth/2;
-  console.log('center of the sunset is at'+sunsetX);
+  scenes=document.querySelectorAll('.scenes');
 
+  for(let i=0;i<scenes.length;i++){
+    console.log('left'+scenes[i].offsetLeft);
+    scenesX[i]=scenes[i].offsetLeft+scenes[i].offsetWidth/2;
+    console.log('center of scenes are at'+scenesX[i]);
 
-
+}
 }
 
 function draw() {
@@ -84,26 +89,56 @@ function draw() {
   //pop up
 
 for(let i=0;i<toppings.length;i++){
-  if(elements[i].offsetLeft<bikeX+bikeWidth/2&&elements[i].offsetLeft+elements[i].offsetWidth>bikeX+bikeWidth/2){
+  if(elements[i].offsetLeft<bikeX&&(elements[i].offsetLeft+elements[i].offsetWidth)>bikeX){
+ 
     elements[i].style.visibility = 'visible';
-    // console.log(elements[i].offsetLeft+elements[i].offsetWidth);
-    // console.log(bikeX);
+ 
+    // console.log('left'+elements[i].offsetLeft);
+    // console.log('width'+elements[i].offsetWidth);
+    // console.log('the right position'+ (elements[i].offsetLeft+elements[i].offsetWidth));
+    
+  }
+  else{
+    elements[i].style.visibility = 'hidden';
   }
 }
+// console.log('the bikeX'+bikeX);
 //filter
 
+ 
+// saturation = constrain(saturation, 0.1, 1);
+// for(let i=0;i<scenes.length;i++){
+//   let saturation = 1 - (abs(scenesX[i] - bikeX) / 200);
+//   if (abs(saturation - last_saturation) > 0.1) {
+//     scenes[i].style.filter = 'saturate(' + saturation + ')';
+//     last_saturation = saturation;
+//   }
+// }
 
- let saturation = 1 - (abs(sunsetX - bikeX) / 200);
-saturation = constrain(saturation, 0.1, 1);
-if (abs(saturation - last_saturation) > 0.5) {
-  scences[0].style.filter = 'saturate(' + saturation + ')';
-  last_saturation = saturation;
+
+for(let i=0;i<scenes.length;i++){
+  last_saturation[i]=0;
+  saturation[i]=1-(scenes[i].offsetLeft-bikeX)/200;
+  saturation[i] = constrain(saturation[i], 0.1, 1);
+  console.log('last'+i+last_saturation[i]);
+  
+  
+    if (abs(saturation[i] - last_saturation[i]) > 0.3) {
+
+          scenes[i].style.filter = 'saturate(' + saturation[i] + ')';
+          last_saturation[i] = saturation[i];
+          
+          
+          
+        }
+        console.log('scene'+i+'saturation is'+scenes[i].style.filter);
 }
-scences[0].style.filter='saturate('+saturation+')';
 
-console.log('last saturation is'+last_saturation);
-console.log('saturation is'+saturation);
- console.log(scences[0].style.filter);
+// scences[0].style.filter='saturate('+saturation+')';
+
+// console.log('last saturation is'+last_saturation);
+// console.log('saturation is'+saturation);
+//  console.log(scences[0].style.filter);
 
 
 // console.log(scences[0].style.filter);

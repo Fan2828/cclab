@@ -46,17 +46,11 @@ h1{
 
 #field{
   position:absolute;
-  left: 700px;
+  left: 725px;
 }
 
-.backgrounds{
-  position:absolute;
-  
-  
-  /* margin-top: 100px; */
-}
 #sunset{
-  
+  position:absolute;
   left:50px;
 }
 
@@ -78,8 +72,12 @@ h1{
 .toppings:hover{
   transform:scale(1.3);
 }
-.connecters{
+#doorandtree{
   position:absolute;
   left:400px;
   top:-4px;
+}
+
+.scenes{
+  filter: saturate(0.1);
 }
