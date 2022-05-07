@@ -9,6 +9,7 @@ let bikeSpeed=0;
 let bikeMoved;
 let canvasWidth=3000;
 let scences;
+let last_saturation;
 
 
 
@@ -91,10 +92,18 @@ for(let i=0;i<toppings.length;i++){
 }
 //filter
 
-let saturation = 1 - (abs(sunsetX - bikeX) / 200);
+
+ let saturation = 1 - (abs(sunsetX - bikeX) / 200);
 saturation = constrain(saturation, 0.1, 1);
- scences[0].style.filter = 'saturate(' + saturation + ')';
-//  console.log(scences[0].style.filter);
+if (abs(saturation - last_saturation) > 0.5) {
+  scences[0].style.filter = 'saturate(' + saturation + ')';
+  last_saturation = saturation;
+}
+scences[0].style.filter='saturate('+saturation+')';
+
+console.log('last saturation is'+last_saturation);
+console.log('saturation is'+saturation);
+ console.log(scences[0].style.filter);
 
 
 // console.log(scences[0].style.filter);
