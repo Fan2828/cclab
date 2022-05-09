@@ -69,7 +69,7 @@ function draw() {
 
  push();
  translate(bikeX,bikeY);
- if(mouseX<bikeX||turnround==true){
+ if(turnround==true){
    scale(-1,1);
  }
  imageMode(CENTER);
@@ -79,13 +79,14 @@ function draw() {
 if(keyIsPressed){
   if(key=="d"||key=="D"){
     bikeSpeed=1;
-    turnround==false;
+    turnround=false;
   }else if(key=="a"||key=="A"){
     bikeSpeed=-1;
-    turnround==true;
+    turnround=true;
   }
 }else{
   bikeSpeed=0;
+  // turnround=false;
 }
 console.log(turnround);
 
