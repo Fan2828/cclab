@@ -9,7 +9,7 @@ canvas {
 
 #stage{
 height: 550px;
-  width: 3000px;
+  width: 5000px;
   position:relative;
   top: 150px;
 }
@@ -78,6 +78,56 @@ h1{
   top:-4px;
 }
 
-.scenes{
-  filter: saturate(0.1);
+#centurypark1{
+  position:absolute;
+  top: 48px;
+  left: 1225px;
 }
+
+#twotrees{
+  position:absolute;
+  top: 68px;
+  left:1087px ;
+}
+#centurypark2{
+  position:absolute;
+  top:-11px;
+  left:1500px;
+}
+
+#centuryparktree{
+  position:absolute;
+  top:92px;
+  left: 1366px;
+}
+#jiushimuseum{
+  position:absolute;
+  top:-6px;
+  left: 1800px;
+}
+
+#tower{
+  position:absolute;
+  top:-50px;
+  left: 1763px;
+}
+#laochengxiang{
+  position:absolute;
+  top: 25px;
+  left: 2560px;
+}
+
+#camping{
+  position:absolute;
+  top:25px;
+  left: 2960px;
+}
+#dino{
+  position:absolute;
+  top:30px;
+  left: 3558px;
+}
+
+/* .scenes{
+  filter: saturate(1);
+} */

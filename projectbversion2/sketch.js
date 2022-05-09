@@ -7,7 +7,7 @@ let bikeWidth=100;
 let bikeHeight=100;
 let bikeSpeed=0;
 let bikeMoved;
-let canvasWidth=3000;
+let canvasWidth=5000;
 
 let last_saturation=[];
 let saturation=[];
@@ -44,6 +44,10 @@ function setup() {
     scenesX[i]=scenes[i].offsetLeft+scenes[i].offsetWidth/2;
     console.log('center of scenes are at'+scenesX[i]);
 
+  
+}
+for(let i=0;i<scenes.length;i++) {
+  last_saturation[i]=0;
 }
 }
 
@@ -53,7 +57,7 @@ function draw() {
 
   background(200,100);
   clear();
-  fill(100,0,0,100);
+  fill(100);
   //draw the ground
   noStroke();
  let ground=quad(50,bikeY+15,canvasWidth,bikeY+15,canvasWidth-50,bikeY+bikeHeight/2+20,0,bikeY+bikeHeight/2+20);
@@ -117,13 +121,13 @@ for(let i=0;i<toppings.length;i++){
 
 
 for(let i=0;i<scenes.length;i++){
-  last_saturation[i]=0;
+  
   saturation[i]=1-(scenes[i].offsetLeft-bikeX)/200;
-  saturation[i] = constrain(saturation[i], 0.1, 1);
-  console.log('last'+i+last_saturation[i]);
+  saturation[i] = constrain(saturation[i], 0, 1);
+  // console.log('last'+i+last_saturation[i]);
   
   
-    if (abs(saturation[i] - last_saturation[i]) > 0.3) {
+    if (abs(saturation[i] - last_saturation[i]) > 0.4) {
 
           scenes[i].style.filter = 'saturate(' + saturation[i] + ')';
           last_saturation[i] = saturation[i];
