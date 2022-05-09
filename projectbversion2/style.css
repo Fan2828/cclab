@@ -54,6 +54,7 @@ h1{
   left:50px;
 }
 
+
 .toppings{
   position:absolute;
 
@@ -64,14 +65,16 @@ h1{
   left:200px;
 
 }
+/* #map:hover \ #mapintro{
+  visibility: visible;
+  transform: scale(1.5);
+  } */
 #table{
   top: 120px;
   left: 870px;
   
 }
-.toppings:hover{
-  transform:scale(1.3);
-}
+
 #doorandtree{
   position:absolute;
   left:400px;
@@ -142,7 +145,67 @@ h1{
   left: 260px;
   top: -50px;
 }
+#letmeout{
+  padding: 0px;
+  margin:0px;
+  font-family: 'Koulen', cursive;
+  position:absolute;
+  left:3900px;
+  top: 35px;
+  font-size: 200px;
+}
+h4{
+  text-align: center;
+  position:absolute;
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 0px;
+  margin:0px;
+  line-height: 0.5;
+  text-align: center;
+  font-size: 15px;
+}
+#mapintro{
+  left: 188px;
+  top: 500px;
+
+
+}
+#doorintro{
+  left: 500px;
+  top: 480px;
+}
+#cenbuintro{
+  line-height: 1;
+  left:850px;
+  top:490px;
+}
+
+#centuryparkintro{
+  line-height:1;
+  left: 1400px;
+  top: 500px;
+}
+#jiushiintro{
+  line-height: 1;
+  left: 2000px;
+  top: 480px;
+}
+#streetintro{
+  line-height: 1;
+  left:2300px;
+  top:500px;
+}
+#laochengxiangintro{
+  line-height: 1;
+  left: 2700px;
+  top: 490px;
+}
+#campingintro{
+  line-height: 1;
+  left: 3300px;
+  top:485px;
+}
 
 /* .scenes{
-  filter: saturate(1);
+  filter: saturate(0.1);
 } */

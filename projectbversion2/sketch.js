@@ -7,13 +7,14 @@ let bikeWidth=100;
 let bikeHeight=100;
 let bikeSpeed=0;
 let bikeMoved;
-let canvasWidth=5000;
+let canvasWidth=4100;
 
 let last_saturation=[];
 let saturation=[];
 let scenes;
 let scenesX=[];
 let turnround;
+
 
 
 
@@ -51,15 +52,19 @@ function setup() {
 for(let i=0;i<scenes.length;i++) {
   last_saturation[i]=0;
 }
+
+//introduction
+// mapintro=document.querySelectorAll('#mapintro');
+
 }
 
 function draw() {
  
 
 
-  background(200,100);
+ 
   clear();
-  fill(100);
+  fill(100,0,0,100);
   //draw the ground
   noStroke();
  let ground=quad(50,bikeY+15,canvasWidth,bikeY+15,canvasWidth-50,bikeY+bikeHeight/2+20,0,bikeY+bikeHeight/2+20);
@@ -106,10 +111,13 @@ console.log(turnround);
 
   //pop up
 
+  //temporary silent
+
 for(let i=0;i<toppings.length;i++){
   if(elements[i].offsetLeft<bikeX&&(elements[i].offsetLeft+elements[i].offsetWidth)>bikeX){
  
     elements[i].style.visibility = 'visible';
+    // intro[i].style.visibility='visible';
  
     // console.log('left'+elements[i].offsetLeft);
     // console.log('width'+elements[i].offsetWidth);
@@ -120,7 +128,14 @@ for(let i=0;i<toppings.length;i++){
     elements[i].style.visibility = 'hidden';
   }
 }
+// silence ends
+
 // console.log('the bikeX'+bikeX);
+//intro
+// if(elements[0].style.visibility='visible'){
+//   mapintro[0].style.visibility='visible';
+// }
+// console.log(mapintro[0]);
 //filter
 
  
