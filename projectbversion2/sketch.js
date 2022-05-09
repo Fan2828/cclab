@@ -13,6 +13,7 @@ let last_saturation=[];
 let saturation=[];
 let scenes;
 let scenesX=[];
+let turnround;
 
 
 
@@ -26,6 +27,7 @@ bikes.push(loadImage('asset/bike2.png'));
 
 function setup() {
   
+
   let canvas=createCanvas(canvasWidth, 200);
   canvas.parent('container');
 
@@ -67,22 +69,33 @@ function draw() {
 
  push();
  translate(bikeX,bikeY);
- if(mouseX<bikeX){
+ if(mouseX<bikeX||turnround==true){
    scale(-1,1);
  }
  imageMode(CENTER);
  image(bikes[curImage],0,0,bikeWidth,bikeHeight);
  pop();
 
-
-
- if(mouseIsPressed&&mouseX>bikeX){
-   bikeSpeed=1;
- }else if(mouseIsPressed&&mouseX<=bikeX){
-   bikeSpeed=-1;
- }else{
+if(keyIsPressed){
+  if(key=="d"||key=="D"){
+    bikeSpeed=1;
+    turnround==false;
+  }else if(key=="a"||key=="A"){
+    bikeSpeed=-1;
+    turnround==true;
+  }
+}else{
   bikeSpeed=0;
- }
+}
+console.log(turnround);
+
+//  if(mouseIsPressed&&mouseX>bikeX){
+//    bikeSpeed=1;
+//  }else if(mouseIsPressed&&mouseX<=bikeX){
+//    bikeSpeed=-1;
+//  }else{
+//   bikeSpeed=0;
+//  }
   //  console.log(bikeSpeed);
  
 //animation
@@ -148,6 +161,7 @@ for(let i=0;i<scenes.length;i++){
 // console.log(scences[0].style.filter);
 
 }
+
 
 class Topping{
   constructor(x,w){

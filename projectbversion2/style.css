@@ -127,6 +127,11 @@ h1{
   top:30px;
   left: 3558px;
 }
+#booth{
+  position:absolute;
+  top: 130px;
+  left: 1666px;
+}
 
 /* .scenes{
   filter: saturate(1);
