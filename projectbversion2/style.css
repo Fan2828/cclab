@@ -23,6 +23,7 @@ height: 550px;
 }
 
 #instruction{
+  line-height: 0.8;
   padding:0px;
   margin:0px;
   left:50px;
